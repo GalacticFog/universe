@@ -1,7 +1,7 @@
 {
   "packagingVersion": "2.0",
   "name": "gestalt-framework",
-  "version": "0.1.0",
+  "version": "2.0.0",
   "tags": ["gestalt-framework", "orchestration", "lambda"],
   "description": "The Gestalt Framework is a solution for building enterprise-grade cloud-native applications using containers and lambdas.",
   "scm": "https://github.com/GalacticFog/gestalt-dcos.git",

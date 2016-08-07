@@ -29,6 +29,12 @@
           "default": "10.10.10.10",
           "pattern" : "^[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+$"
         },
+        "framework-version": {
+          "type": "string",
+          "description": "Version of the Gestalt framework to install",
+          "default": "latest",
+          "pattern" : "^.+$"
+        },
         "cpu-limit-framework": {
           "default": 0.5,
           "description": "The CPU shares for the Gestalt framework.",
