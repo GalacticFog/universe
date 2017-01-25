@@ -15,11 +15,6 @@
           "default": "[empty]",
           "pattern": "yes"
         },
-        "mesos-master": {
-          "type": "string",
-          "description": "The address:port for the Mesos master by the launcher.",
-          "default": "master.mesos:5050"
-        },
         "marathon-url": {
           "type": "string",
           "description": "The base URL for accessing Marathon by the launcher.",
@@ -36,8 +31,8 @@
         },
         "cpu-limit-framework": {
           "default": 0.5,
-          "description": "The CPU shares for the Gestalt framework.",
-          "minimum": 0.01,
+          "description": "The CPU shares for the Gestalt framework launcher.",
+          "minimum": 0.1,
           "type": "number"
         },
         "mem-limit-framework": {
@@ -59,7 +54,7 @@
       },
       "required": [
         "name",
-        "mesos-master",
+        "accept-eula",
         "framework-version",
         "marathon-url",
         "cpu-limit-framework",
