@@ -9,6 +9,12 @@
           "default": "gestalt-framework",
           "pattern" : "^(([a-z0-9]|[a-z0-9][a-z0-9\\-]*[a-z0-9])\\.)*([a-z0-9]|[a-z0-9][a-z0-9\\-]*[a-z0-9])$"
         },
+        "accept-eula": {
+          "type": "string",
+          "description": "Must enter \"yes\"",
+          "default": "[empty]",
+          "pattern": "yes"
+        },
         "mesos-master": {
           "type": "string",
           "description": "The address:port for the Mesos master by the launcher.",

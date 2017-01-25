@@ -24,5 +24,8 @@
   }, {
       "name" : "Commercial",
       "url" : "http://www.galacticfog.com/contact"
+  }, {
+      "name" : "End User License Agreement",
+      "url" : "http://www.galacticfog.com/gestalt-eula.html"
   } ]
 }
