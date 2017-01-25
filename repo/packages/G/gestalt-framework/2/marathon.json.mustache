@@ -13,12 +13,11 @@
     "JVM_OPTS": "-Xms{{jvm.heap-min}}m -Xmx{{jvm.heap-max}}m",
     "GESTALT_FRAMEWORK_VERSION": "{{service.framework-version}}"
   },
-  "cmd": "LIBPROCESS_PORT=$PORT1 ./bin/gestalt-dcos -Dhttp.port=$PORT0 -Dmesos.master={{service.mesos-master}} -Dmarathon.url={{service.marathon-url}} -Dscheduler.name={{service.name}} -Dmarathon.app-group={{service.name}}-tasks -Dlaser.min-cool-executors={{laser.min-cool-executors}} -Dsecurity.username={{security.admin-username}} -Dsecurity.password=\"{{security.admin-password}}\" {{#security.api-key}}-Dsecurity.key={{security.api-key}}{{/security.api-key}} {{#security.api-secret}}-Dsecurity.secret=\"{{security.api-secret}}\"{{/security.api-secret}} {{#service.tld}}-Dmarathon.tld={{service.tld}}{{/service.tld}} {{#database.hostname}}-Ddatabase.hostname={{database.hostname}}{{/database.hostname}} {{#database.port}}-Ddatabase.port={{database.port}}{{/database.port}} {{#database.prefix}}-Ddatabase.prefix={{database.prefix}}{{/database.prefix}} -Ddatabase.username={{database.username}} -Ddatabase.password=\"{{database.password}}\" -Ddatabase.provision={{database.provision}} {{#database.provisioned-size}}-Ddatabase.provisioned-size={{database.provisioned-size}}{{/database.provisioned-size}}",
+  "cmd": "LIBPROCESS_PORT=$PORT1 ./bin/gestalt-dcos -Dhttp.port=$PORT0 -Dmarathon.url={{service.marathon-url}} -Dscheduler.name={{service.name}} -Dmarathon.app-group={{service.name}}-tasks -Dlaser.scale-down-timeout={{laser.scale-down-timeout}}  -Dlaser.min-cool-executors={{laser.min-cool-executors}} -Dsecurity.username={{security.admin-username}} -Dsecurity.password=\"{{security.admin-password}}\" {{#security.api-key}}-Dsecurity.key={{security.api-key}}{{/security.api-key}} {{#security.api-secret}}-Dsecurity.secret=\"{{security.api-secret}}\"{{/security.api-secret}} {{#service.tld}}-Dmarathon.tld={{service.tld}}{{/service.tld}} {{#database.hostname}}-Ddatabase.hostname={{database.hostname}}{{/database.hostname}} {{#database.port}}-Ddatabase.port={{database.port}}{{/database.port}} {{#database.prefix}}-Ddatabase.prefix={{database.prefix}}{{/database.prefix}} -Ddatabase.username={{database.username}} -Ddatabase.password=\"{{database.password}}\" -Ddatabase.provision={{database.provision}} {{#database.provisioned-size}}-Ddatabase.provisioned-size={{database.provisioned-size}}{{/database.provisioned-size}}",
   "cpus": {{service.cpu-limit-framework}},
   "mem": {{service.mem-limit-framework}},
   "instances": 1,
   "labels": {
-    "DCOS_PACKAGE_FRAMEWORK_NAME": "{{service.name}}",
     "DCOS_SERVICE_NAME": "{{service.name}}",
     "DCOS_SERVICE_SCHEME": "http",
     "DCOS_SERVICE_PORT_INDEX": "0"

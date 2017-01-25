@@ -145,10 +145,17 @@
           "description": "Minimum number of cool executors.",
           "default" : 1,
           "minimum" : 1
+        },
+        "scale-down-timeout": {
+          "type": "integer",
+          "description": "Lambda executor scale down timeout (seconds)",
+          "default" : 15,
+          "minimum" : 1
         }
       },
       "required": [
-        "min-cool-executors"
+        "min-cool-executors",
+        "scale-down-timeout"
       ],
       "type": "object"
     },
