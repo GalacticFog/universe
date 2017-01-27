@@ -20,6 +20,11 @@
           "description": "The base URL for accessing Marathon by the launcher.",
           "default": "http://marathon.mesos:8080"
         },
+        "lb-url": {
+           "type": "string",
+           "description": "The base URL for a marathon-lb instance, for accessing services by their assigned service ports.",
+           "default": ""
+        },
         "tld": {
           "type": "string",
           "description": "Top-level domain for creating marathon-lb virtual hosts for framework services."
@@ -50,6 +55,11 @@
         "role": {
           "description": "Deploy gestalt-framework-scheduler only on nodes with this role.",
           "type": "string"
+        },
+        "debug-logging": {
+          "description": "Enable debug logging.",
+          "type": "boolean",
+          "default": false
         }
       },
       "required": [
@@ -58,7 +68,8 @@
         "framework-version",
         "marathon-url",
         "cpu-limit-framework",
-        "mem-limit-framework"
+        "mem-limit-framework",
+        "debug-logging"
       ],
       "type": "object"
     },
@@ -151,11 +162,25 @@
           "description": "Lambda executor scale down timeout (seconds)",
           "default" : 15,
           "minimum" : 1
+        },
+        "min-port-range": {
+          "type": "integer",
+          "description": "Minimum port number for scheduler listening sockets.",
+          "default" : 60000,
+          "minimum" : 1
+        },
+        "max-port-range": {
+          "type": "integer",
+          "description": "Maximum port number for scheduler listening sockets.",
+          "default" : 60500,
+          "minimum" : 1
         }
       },
       "required": [
         "min-cool-executors",
-        "scale-down-timeout"
+        "scale-down-timeout",
+        "min-port-range",
+        "max-port-range"
       ],
       "type": "object"
     },
