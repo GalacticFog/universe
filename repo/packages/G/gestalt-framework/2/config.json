@@ -81,6 +81,11 @@
           "description": "Provision a database server for use by the framework services. Otherwise, requires a pre-existing database server.",
           "default": true
         },
+        "num-secondaries": {
+          "type": "integer",
+          "description": "When provisioning the database, number of redundant secondaries to be provisioned.",
+          "default": 0
+        },
         "provisioned-size": {
           "type": "integer",
           "description": "When provisioning the database, size for the persistent volume in MB.",
