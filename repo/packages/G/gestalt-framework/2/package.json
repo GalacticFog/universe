@@ -15,7 +15,7 @@
     "lambda", 
     "policy"
   ],
-  "version" : "0.3.0-RC1",
+  "version" : "1.0.0",
   "scm" : "https://github.com/GalacticFog/gestalt-dcos.git",
   "website" : "http://www.galacticfog.com/get-started",
   "licenses" : [ {
