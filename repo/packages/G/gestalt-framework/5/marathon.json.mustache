@@ -1,5 +1,6 @@
 {
   "id": "/{{service.name}}/dcos-launcher",
+  "cmd": "./bin/gestalt-dcos -Dmeta.company-name=\"{{meta.company-name}}\" {{#service.debug-logging}}-Dlogger.resource=debug-logging.xml{{/service.debug-logging}}",
   "maintainer": "support@galacticfog.com",
   "container": {
     "type": "DOCKER",
@@ -17,9 +18,9 @@
     "GESTALT_FRAMEWORK_VERSION": "{{service.framework-version}}",
 
     "MARATHON_APP_GROUP": "{{service.name}}",
-    "MARATHON_URL": "{{service.marathon-url}} ",
+    "MARATHON_URL": "{{service.marathon-url}}",
     {{#service.tld}}    "MARATHON_TLD":    "{{service.tld}}",   {{/service.tld}} 
-    {{#service.lb-url}} "MARATHON_LB_URL": "{{service.lb-url}}, {{/service.lb-url}} 
+    {{#service.lb-url}} "MARATHON_LB_URL": "{{service.lb-url}}", {{/service.lb-url}} 
 
     "DATABASE_USERNAME":  "{{database.username}}",
     "DATABASE_PASSWORD":  "{{database.password}}",
@@ -46,7 +47,6 @@
     "LASER_SCALE_DOWN_TIMEOUT": "{{laser.scale-down-timeout}}",
     "LASER_MIN_COOL_EXECUTORS": "{{laser.min-cool-executors}}"
   },
-  "cmd": "./bin/gestalt-dcos -Dmeta.company-name=\"{{meta.company-name}}\" {{#service.debug-logging}}-Dlogger.resource=debug-logging.xml{{/service.debug-logging}} 
   "cpus": 0.25,
   "mem": 512,
   "instances": 1,
