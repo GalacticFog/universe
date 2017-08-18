@@ -81,6 +81,16 @@
           "description": "When provisioning the database, number of redundant secondaries to be provisioned.",
           "default": 0
         },
+        "provisioned-cpu": {
+          "type": "number",
+          "description": "When provisioning the database, CPU allocation in shares.",
+          "default": 1.0
+        },
+        "provisioned-memory": {
+          "type": "number",
+          "description": "When provisioning the database, memory allocation in MB.",
+          "default": 2048
+        },
         "provisioned-size": {
           "type": "integer",
           "description": "When provisioning the database, size for the persistent volume in MB.",
